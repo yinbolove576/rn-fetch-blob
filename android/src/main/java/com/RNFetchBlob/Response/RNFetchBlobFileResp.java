@@ -35,6 +35,11 @@ public class RNFetchBlobFileResp extends ResponseBody {
     FileOutputStream ofStream;
     boolean isEndMarkerReceived;
 
+    public RNFetchBlobFileResp(ResponseBody body) {
+        super();
+        this.originalBody = body;
+    }
+
     public RNFetchBlobFileResp(ReactApplicationContext ctx, String taskId, ResponseBody body, String path, boolean overwrite) throws IOException {
         super();
         this.rctContext = ctx;
